@@ -1,0 +1,42 @@
+
+<h2 mat-dialog-title>{{title}}</h2>
+<mat-dialog-content>
+    <form [formGroup]="userForm">
+        <div class="mt-2">
+            <input type="text" placeholder="Name" class="form-control" formControlName="name" />
+        </div>
+        <div class="mt-2">
+            <input type="text" placeholder="Last name" class="form-control" formControlName="lastName" />
+        </div>
+        <div class="mt-2">
+            <input type="text" placeholder="Surname" class="form-control" formControlName="surName" />
+        </div>
+        <div class="mt-2">
+            <input type="text" placeholder="RFC" class="form-control" formControlName="rfc" />
+        </div>
+        <div class="mt-2">
+            <input type="date" placeholder="Birthday" class="form-control" formControlName="birthday" />
+        </div>
+    </form>
+</mat-dialog-content>
+<mat-dialog-actions>
+    <div class="container">
+        <div class="row justify-content-end">
+            <div class="col-2">
+                <button mat-stroked-button color="warn" (click)="closeDialog()">
+                    <mat-icon>close</mat-icon> Cancel
+                </button>
+            </div>
+            <div *ngIf="isEdit" class="col-2">
+                <button mat-flat-button color="accent" (click)="updateUser()">
+                    <mat-icon>edit</mat-icon> Update
+                </button>
+            </div>
+            <div *ngIf="!isEdit" class="col-2">
+                <button mat-flat-button color="primary" (click)="saveUser()">
+                    <mat-icon>save</mat-icon> Save
+                </button>
+            </div>
+        </div>
+    </div>
+</mat-dialog-actions>

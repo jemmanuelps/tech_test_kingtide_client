@@ -1,0 +1,43 @@
+
+<div class="mt-5">
+    <div class="container">
+        <form *ngIf="userId" [formGroup]="userForm">
+            <div class="mt-2">
+                <input type="text" placeholder="Name" class="form-control" formControlName="name" />
+            </div>
+            <div class="mt-2">
+                <input type="text" placeholder="Last name" class="form-control" formControlName="lastName" />
+            </div>
+            <div class="mt-2">
+                <input type="text" placeholder="Surname" class="form-control" formControlName="surName" />
+            </div>
+            <div class="mt-2">
+                <input type="text" placeholder="RFC" class="form-control" formControlName="rfc" />
+            </div>
+            <div class="mt-2">
+                <input type="date" placeholder="Birthday" class="form-control" formControlName="birthday" />
+            </div>
+        </form>
+    </div>
+</div>
+<div class="mt-7" *ngIf="userId">
+    <div class="container">
+        <div class="row">
+            <div class="col-6">
+                <h2>Files:</h2>
+                <input type="file" accept=".docx,.pdf" />
+                <button mat-icon-button (click)="saveFiles()">
+                    <mat-icon>save</mat-icon>
+                </button>
+            </div>
+            <div class="col-6">
+                <h2>Profile picture:</h2>
+                <input type="file" accept=".jpeg,.jpg,.png" />
+                <button mat-icon-button (click)="savePhoto()">
+                    <mat-icon>save</mat-icon>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
